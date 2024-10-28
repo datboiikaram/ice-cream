@@ -1,0 +1,468 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+:root {
+  --pink-background: #fffbce;
+  --pink-text: #f74663;
+  --pink-buttons: #fbbe9f;
+  --blue-background: #c0d3fe;
+  --blue-text: #1d3484;
+  --blue-buttons: #6b8ae7;
+  --green-background: #e3e276;
+  --green-text: #2e5a3f;
+  --green-buttons: #adc64c;
+}
+// Main
+.container {
+  width: 100%;
+  font-family: sans-serif;
+}
+.burger-menu {
+  display: none;
+}
+.main {
+  background-color: var(--pink-background);
+  width: 100%;
+  height: 110vh;
+  overflow: hidden;
+  &__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 120px;
+    padding: 0 50px 10px;
+    border-bottom: 2px solid var(--pink-text);
+    &__nav {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &__logo {
+        width: 70px;
+      }
+      &__link {
+        font-family: sans-serif;
+        font-weight: bold;
+        color: var(--pink-text);
+        text-decoration: none;
+        transition: 0.3s;
+        padding: 10px;
+        border-radius: 50px;
+      }
+      &__link:hover {
+        color: white;
+        background-color: var(--pink-buttons);
+        scale: 1.05;
+      }
+    }
+  }
+  &__stuff {
+    padding: 0px 80px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 100px;
+    line-height: 1;
+  }
+  &__description {
+    font-size: 22px;
+  }
+  &__media {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 100px;
+      gap: 7px;
+    }
+    &__arrow {
+      background-color: var(--pink-buttons);
+      width: 70px;
+      height: 30px;
+      position: relative;
+    }
+  }
+}
+.strawberry-text {
+  color: var(--pink-text);
+}
+.arrow-icon {
+  width: 30px;
+  fill: var(--pink-text);
+  position: absolute;
+  top: -20px;
+  right: 30px;
+  transition: 0.3s;
+}
+.arrow-icon:hover {
+  scale: 1.1;
+  cursor: pointer;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+.shop-button {
+  margin-left: 100px;
+  width: fit-content;
+  padding: 5px 20px;
+  font-weight: bold;
+  color: white;
+  background-color: var(--pink-buttons);
+  border: none;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+.shop-button:hover {
+  scale: 1.1;
+  box-shadow: 0 0 16px var(--pink-buttons);
+}
+.numbers {
+  font-weight: bold;
+}
+.media-icon {
+  width: 15px;
+  fill: var(--pink-text);
+  transition: 0.3s;
+}
+.media-icon:hover {
+  scale: 1.2;
+  cursor: pointer;
+}
+.pipe-icon {
+  fill: var(--pink-text);
+}
+.flavors-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 30px;
+}
+.flavors-label {
+  padding: 5px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.flavors-label:hover {
+  scale: 1.03;
+  cursor: cell;
+}
+#strawberry-label {
+  color: var(--pink-text);
+  background-color: var(--pink-buttons);
+  border: 1px solid var(--pink-text);
+}
+#strawberry-label:hover {
+  box-shadow: 0 0 16px var(--pink-text);
+}
+#blueberry-label {
+  color: var(--blue-text);
+  background-color: var(--blue-buttons);
+  border: 1px solid var(--blue-text);
+}
+#blueberry-label:hover {
+  box-shadow: 0 0 16px var(--blue-text);
+}
+#avocado-label {
+  color: var(--green-text);
+  background-color: var(--green-buttons);
+  border: 1px solid var(--green-text);
+}
+#avocado-label:hover {
+  box-shadow: 0 0 16px var(--green-text);
+}
+.flavors-button {
+  display: none;
+}
+.ice-cream {
+  width: 520px;
+}
+.blueberry,
+.avocado {
+  display: none;
+}
+.search-input {
+  display: none;
+}
+#blue-logo,
+#green-logo {
+  display: none;
+}
+#search-icon {
+  width: 20px;
+  fill: var(--pink-text);
+  transition: 0.3s;
+}
+#search-icon:hover {
+  scale: 1.2;
+  cursor: pointer;
+}
+.blueberry-text {
+  color: var(--blue-text);
+}
+.container:has(#blueberry-flavor:checked) {
+  .main__header__nav {
+    background-color: var(--blue-background);
+  }
+  .strawberry {
+    display: none;
+  }
+  .avocado {
+    display: none;
+  }
+  .blueberry {
+    display: flex;
+  }
+  .main {
+    background-color: var(--blue-background);
+    &__header {
+      border-bottom: 2px solid var(--blue-text);
+      &__nav {
+        &__link {
+          color: var(--blue-text);
+        }
+        &__link:hover {
+          color: white;
+          background-color: var(--blue-buttons);
+        }
+      }
+    }
+    &__media {
+      &__arrow {
+        background-color: var(--blue-buttons);
+      }
+    }
+  }
+  .arrow-icon,
+  .media-icon,
+  .pipe-icon,
+  #search-icon {
+    fill: var(--blue-text);
+  }
+  .shop-button {
+    background-color: var(--blue-buttons);
+  }
+  .shop-button:hover {
+    box-shadow: 0 0 16px var(--blue-buttons);
+  }
+  .burger-line::after {
+    background-color: var(--blue-text);
+  }
+}
+.avocado-text {
+  color: var(--green-text);
+}
+.container:has(#avocado-flavor:checked) {
+  .main__header__nav {
+    background-color: var(--green-background);
+  }
+  .strawberry {
+    display: none;
+  }
+  .avocado {
+    display: flex;
+  }
+  .blueberry {
+    display: none;
+  }
+  .main {
+    background-color: var(--green-background);
+    &__header {
+      border-bottom: 2px solid var(--green-text);
+      &__nav {
+        &__link {
+          color: var(--green-text);
+        }
+        &__link:hover {
+          color: white;
+          background-color: var(--green-buttons);
+        }
+      }
+    }
+    &__media {
+      &__arrow {
+        background-color: var(--green-buttons);
+      }
+    }
+  }
+  .arrow-icon,
+  .media-icon,
+  .pipe-icon,
+  #search-icon {
+    fill: var(--green-text);
+  }
+  .shop-button {
+    background-color: var(--green-buttons);
+  }
+  .shop-button:hover {
+    box-shadow: 0 0 16px var(--green-buttons);
+  }
+  .burger-line::after {
+    background-color: var(--green-text);
+  }
+}
+// End Main
+// Responsive
+@media (max-width: 700px) {
+  .burger-menu {
+    display: block;
+  }
+  .burger__input {
+    display: none;
+  }
+  .burger__label {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+  .burger-line {
+    height: 10px;
+  }
+  .burger-line::after {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 5px;
+    border-radius: 50px;
+    background-color: var(--pink-text);
+  }
+
+  .two::after {
+    width: 40px;
+  }
+
+  .flavors-buttons {
+    gap: 10px;
+  }
+  .main {
+    height: 100vh;
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      z-index: 2;
+      &__nav {
+        display: none;
+        z-index: 1;
+      }
+    }
+    &__stuff {
+      flex-direction: column;
+    }
+    &__title {
+      font-size: 70px;
+    }
+  }
+
+  #search-icon {
+    width: 35px;
+    margin-top: 10px;
+  }
+  .container:has(.burger__input:checked) {
+    .main__header {
+      position: relative;
+    }
+    .main__header__nav {
+      width: 150px;
+      background-color: var(--pink-background);
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      left: 0;
+    }
+
+    .one::after {
+      transform: rotateZ(45deg) translateX(15px) translateY(3px);
+    }
+    .two::after {
+      display: none;
+    }
+    .three::after {
+      transform: rotateZ(-45deg) translateX(10px);
+    }
+  }
+}
+// End Responsive
