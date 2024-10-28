@@ -132,8 +132,10 @@ h6 {
   }
   &__stuff {
     padding: 0px 80px;
+
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   &__title {
