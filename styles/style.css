@@ -652,8 +652,9 @@ h6 {
   cursor: pointer;
 }
 .products__type {
-  height: 300px;
-  width: 230px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
   padding: 20px;
   box-shadow: 5px 5px 23px rgba(247, 70, 99, 0.5333333333);
   border-radius: 20px;
@@ -665,6 +666,8 @@ h6 {
 }
 
 .product-image {
+  width: 200px;
+  height: 200px;
   filter: drop-shadow(0 16px 16px rgba(247, 70, 99, 0.5333333333));
 }
 
@@ -753,6 +756,138 @@ h6 {
   cursor: pointer;
 }
 
+@media (max-width: 1100px) {
+  .flavors-buttons {
+    gap: 7px;
+  }
+  .main {
+    gap: 20px;
+  }
+  .main__header {
+    display: flex;
+    gap: 30px;
+  }
+  .main__header__nav {
+    justify-content: center;
+    gap: 15px;
+  }
+  .main__about {
+    width: 350px;
+    padding: 0;
+  }
+  .main__about__title {
+    font-size: 35px;
+  }
+  .main__about__info {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .main__title {
+    font-size: 70px;
+  }
+  #search-icon {
+    width: 27px;
+  }
+  .history {
+    height: 350px;
+  }
+  .history__right {
+    gap: 15px;
+  }
+  .history__stuff {
+    gap: 15px;
+  }
+  .history__description {
+    font-size: 20px;
+    width: 200px;
+  }
+  .history__img {
+    width: 210px;
+    height: 210px;
+  }
+  .flavours {
+    padding: 50px 0;
+  }
+  .flavours__types {
+    gap: 20px;
+  }
+  .flavours__title {
+    font-size: 50px;
+  }
+  .flavours__description {
+    font-size: 17px;
+  }
+  .flavours__fruits {
+    text-align: center;
+    gap: 50px;
+    font-size: 17px;
+  }
+  .flavours__fruit {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .flavours__fruit img {
+    width: 150px;
+  }
+  .featured__food__gallery {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .featured__food__gallery__img {
+    width: 200px;
+    height: 270px;
+  }
+  .left-angle,
+  .right-angle {
+    display: none;
+  }
+  .products {
+    padding: 30px 5px;
+  }
+  .products__types {
+    padding: 20px;
+  }
+  .products__button {
+    display: none;
+  }
+  .product-image {
+    width: 100px;
+    height: 100px;
+  }
+  .bottom {
+    padding: 10px;
+    gap: 30px;
+  }
+  .bottom__logo {
+    width: 160px;
+  }
+  .bottom__header {
+    font-size: 18px;
+  }
+  .bottom__link {
+    font-size: 14px;
+  }
+  .footer {
+    background-size: cover;
+    height: 100px;
+    justify-content: center;
+  }
+  .footer__stuff {
+    height: 100%;
+    margin: 0;
+    gap: 20px;
+  }
+  .footer__copyright {
+    font-size: 14px;
+  }
+  .footer__links {
+    margin: 0;
+    width: 20px;
+    gap: 10px;
+  }
+}
 @media (max-width: 700px) {
   .burger-menu {
     display: block;
